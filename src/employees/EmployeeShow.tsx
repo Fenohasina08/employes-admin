@@ -26,7 +26,9 @@ const EmployeeShowActions = () => {
 export const EmployeeShow = () => {
   return (
     <Show actions={<EmployeeShowActions />}>
+        <SimpleShowLayout>
 
+        </SimpleShowLayout>
     </Show>
   );
 };
