@@ -38,6 +38,10 @@ export const EmployeeShow = () => {
 <TextField
   source="email"
 />
+<TextField
+  source="department"
+  label="Département"
+/>
         </SimpleShowLayout>
     </Show>
   );
