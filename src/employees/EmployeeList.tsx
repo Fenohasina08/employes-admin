@@ -38,7 +38,7 @@ export const EmployeeList = () => {
       pagination={<EmployeePagination />}
       perPage={5}   // ⭐ clé principale
     >
-      <Datagrid rowClick="edit">
+      <Datagrid rowClick="show">
 
         {/* Prénom + Nom (si séparés dans ton API) */}
         <TextField source="firstname" label="Prénom" />
