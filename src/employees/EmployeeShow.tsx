@@ -8,3 +8,17 @@ import {
   ListButton,
   EditButton,
 } from "react-admin";
+
+const EmployeeShowActions = () => {
+  return (
+    <TopToolbar>
+
+      {/* Retour vers la liste */}
+      <ListButton />
+
+      {/* Aller vers la page Edit */}
+      <EditButton />
+
+    </TopToolbar>
+  );
+};
