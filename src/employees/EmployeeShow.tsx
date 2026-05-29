@@ -42,6 +42,13 @@ export const EmployeeShow = () => {
   source="department"
   label="Département"
 />
+<NumberField
+  source="salary"
+  options={{
+    style: "currency",
+    currency: "EUR",
+  }}
+/>
         </SimpleShowLayout>
     </Show>
   );
