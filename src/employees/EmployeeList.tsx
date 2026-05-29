@@ -11,27 +11,24 @@ import {
   DeleteButton,
 } from "react-admin";
 
-// 🔢 Pagination personnalisée (5 éléments par page)
-const EmployeePagination = () => <Pagination rowsPerPageOptions={[5, 10, 25]} />;
+ const EmployeePagination = () => <Pagination rowsPerPageOptions={[5, 10, 25]} />;
 
-// 🔍 Barre de recherche (alwaysOn)
 const employeeFilters = [
-  TextInput({
-    label: "Recherche",
-    source: "q",
-    alwaysOn: true,
-  }),
+  <TextInput
+    label="Recherche"
+    source="q"
+    alwaysOn
+  />,
 
-  // 🎯 Filtre par département
-  SelectInput({
-    label: "Département",
-    source: "department",
-    choices: [
+  <SelectInput
+    label="Département"
+    source="department"
+    choices={[
       { id: "Informatique", name: "Informatique" },
       { id: "Marketing", name: "Marketing" },
       { id: "RH", name: "RH" },
-    ],
-  }),
+    ]}
+  />
 ];
 
 export const EmployeeList = () => {
