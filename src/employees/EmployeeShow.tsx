@@ -27,7 +27,17 @@ export const EmployeeShow = () => {
   return (
     <Show actions={<EmployeeShowActions />}>
         <SimpleShowLayout>
-
+            <TextField
+            source="firstname"
+            label="Prénom"
+            />
+            <TextField
+  source="lastname"
+  label="Nom"
+/>
+<TextField
+  source="email"
+/>
         </SimpleShowLayout>
     </Show>
   );
