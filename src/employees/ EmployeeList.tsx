@@ -7,6 +7,7 @@ import {
   TextInput,
   SelectInput,
   Pagination,
+  EditButton,
 } from "react-admin";
 
 // 🔢 Pagination personnalisée (5 éléments par page)
@@ -63,6 +64,8 @@ export const EmployeeList = () => {
         {/* Actif */}
         <BooleanField source="active" />
 
+             {/* ✏️ Bouton Modifier */}
+        <EditButton />
       </Datagrid>
     </List>
   );
