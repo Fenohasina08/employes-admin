@@ -15,28 +15,28 @@ export const EmployeeCreate = () => {
       <SimpleForm>
         {/* Prénom */}
         <TextInput
-          source="firstname"
+          source="Prénom"
           label="Prénom"
           validate={required()}
         />
 
         {/* Nom */}
         <TextInput
-          source="lastname"
+          source="Nom"
           label="Nom"
           validate={required()}
         />
 
         {/* Email */}
         <TextInput
-          source="email"
+          source="Email"
           label="Email"
           validate={required()}
         />
 
         {/* Département */}
         <SelectInput
-          source="department"
+          source="Département"
           label="Département"
           choices={[
             { id: "Informatique", name: "Informatique" },
@@ -48,14 +48,14 @@ export const EmployeeCreate = () => {
 
         {/* Salaire */}
         <NumberInput
-          source="salary"
+          source="Salaire"
           label="Salaire"
           validate={[required(), minValue(1500)]}
         />
 
         {/* Actif */}
         <BooleanInput
-          source="active"
+          source="Actif"
           label="Actif"
           defaultValue={true}
         />

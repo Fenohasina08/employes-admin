@@ -2,27 +2,48 @@
   "employees": [
     {
       "id": 1,
-      "Prénom": "Alice Martin",
+      "Prénom": "Alice",
+      "Nom": "Martin",
       "Email": "alice@company.com",
       "Département": "Informatique",
-      "Salaire": "2 800 €",
-      "Actif": "Oui"
+      "Salaire": 2800,
+      "Actif": true
     },
     {
       "id": 2,
-      "Prénom": "Bob Dupont",
+      "Prénom": "Bob",
+      "Nom": "Dupont",
       "Email": "bob@company.com",
       "Département": "Marketing",
-      "Salaire": "2 500 €",
-      "Actif": "Oui"
+      "Salaire": 2500,
+      "Actif": true
     },
     {
       "id": 3,
-      "Prénom": "Clara Nguyen",
+      "Prénom": "Clara",
+      "Nom": "Nguyen",
       "Email": "clara@company.com",
       "Département": "RH",
-      "Salaire": "2 600 €",
-      "Actif": "Non"
+      "Salaire": 2600,
+      "Actif": false
+    },
+    {
+      "id": 4,
+      "Prénom": "testPrenom",
+      "Nom": "testNom",
+      "Email": "testemail@gmail.com",
+      "Département": "Informatique",
+      "Salaire": 2000,
+      "Actif": true
+    },
+    {
+      "id": 5,
+      "Prénom": "testPrenom2",
+      "Nom": "testNom2",
+      "Email": "teste2mail@gmail.com",
+      "Département": "RH",
+      "Salaire": 2000,
+      "Actif": false
     }
   ]
 }
