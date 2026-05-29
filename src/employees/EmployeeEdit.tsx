@@ -10,12 +10,12 @@ import {
   useRecordContext,
 } from "react-admin";
 
-export const EmployeeEdit = () => {
+const EmployeeTitle = () => {
+  const record = useRecordContext();
+
   return (
-    <Edit>
-      <SimpleForm>
-        <Edit title={<EmployeeTitle />}></Edit>
-      </SimpleForm>
-    </Edit>
+    <span>
+      Modifier : {record?.firstname} {record?.lastname}
+    </span>
   );
 };
