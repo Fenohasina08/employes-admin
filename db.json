@@ -1,26 +1,23 @@
-[
-  {
-    "ID": 1,
+{
+  "1": {
     "Prénom": "Alice Martin",
     "Email": "alice@company.com",
     "Département": "Informatique",
     "Salaire": "2 800 €",
     "Actif": "Oui"
   },
-  {
-    "ID": 2,
+  "2": {
     "Prénom": "Bob Dupont",
     "Email": "bob@company.com",
     "Département": "Marketing",
     "Salaire": "2 500 €",
     "Actif": "Oui"
   },
-  {
-    "ID": 3,
+  "3": {
     "Prénom": "Clara Nguyen",
     "Email": "clara@company.com",
     "Département": "RH",
     "Salaire": "2 600 €",
     "Actif": "Non"
   }
-]
+}
