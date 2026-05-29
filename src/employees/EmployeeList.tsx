@@ -40,15 +40,11 @@ export const EmployeeList = () => {
     >
       <Datagrid rowClick="show">
 
-        {/* Prénom + Nom (si séparés dans ton API) */}
-        <TextField source="firstname" label="Prénom" />
-        <TextField source="lastname" label="Nom" />
-
-        {/* Email */}
-        <TextField source="email" />
-
-        {/* Département */}
-        <TextField source="department" label="Département" />
+        <TextField source="Prénom" />
+        <TextField source="Email" />
+        <TextField source="Département" />
+        <TextField source="Salaire" />
+        <TextField source="Actif" />
 
         {/* Salaire en € */}
         <NumberField
