@@ -7,7 +7,7 @@
       "Email": "alice@company.com",
       "Département": "Informatique",
       "Salaire": 2800,
-      "Actif": true
+      "Actif": "Oui"
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "Email": "bob@company.com",
       "Département": "Marketing",
       "Salaire": 2500,
-      "Actif": true
+      "Actif": "Oui"
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "Email": "clara@company.com",
       "Département": "RH",
       "Salaire": 2600,
-      "Actif": false
+      "Actif": "Non"
     },
     {
       "id": 4,
@@ -34,7 +34,7 @@
       "Email": "testemail@gmail.com",
       "Département": "Informatique",
       "Salaire": 2000,
-      "Actif": true
+      "Actif": "Oui"
     },
     {
       "id": 5,
@@ -43,7 +43,7 @@
       "Email": "teste2mail@gmail.com",
       "Département": "RH",
       "Salaire": 2000,
-      "Actif": false
+      "Actif": "Non"
     }
   ]
 }
