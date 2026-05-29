@@ -6,7 +6,11 @@ import {
   BooleanField,
   TextInput,
   SelectInput,
+  Pagination,
 } from "react-admin";
+
+// 🔢 Pagination personnalisée (5 éléments par page)
+const EmployeePagination = () => <Pagination rowsPerPageOptions={[5, 10, 25]} />;
 
 // 🔍 Barre de recherche (alwaysOn)
 const employeeFilters = [
@@ -30,7 +34,11 @@ const employeeFilters = [
 
 export const EmployeeList = () => {
   return (
-    <List filters={employeeFilters}>
+     <List
+      filters={employeeFilters}
+      pagination={<EmployeePagination />}
+      perPage={5}   // ⭐ clé principale
+    >
       <Datagrid rowClick="edit">
 
         {/* Prénom + Nom (si séparés dans ton API) */}
