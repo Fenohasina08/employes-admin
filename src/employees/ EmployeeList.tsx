@@ -64,12 +64,8 @@ export const EmployeeList = () => {
 
         {/* Actif */}
         <BooleanField source="active" />
-
-             {/* ✏️ Bouton Modifier */}
-        <EditButton />
-
-            {/* 🗑️ Bouton Supprimer */}
-        <DeleteButton />
+            <EditButton />
+            <DeleteButton />
       </Datagrid>
     </List>
   );
