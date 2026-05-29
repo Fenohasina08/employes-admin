@@ -22,3 +22,11 @@ const EmployeeShowActions = () => {
     </TopToolbar>
   );
 };
+
+export const EmployeeShow = () => {
+  return (
+    <Show actions={<EmployeeShowActions />}>
+
+    </Show>
+  );
+};
