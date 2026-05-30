@@ -26,8 +26,7 @@ export const EmployeeCreate = () => {
           validate={required()}
         />
 
-        {/* Email */}
-       <TextInput
+        <TextInput
         source="email"
         label="Email"
         validate={[
@@ -36,8 +35,7 @@ export const EmployeeCreate = () => {
         ]}
       />
 
-        {/* Département */}
-        <SelectInput
+         <SelectInput
           source="department"
           label="Département"
           choices={[
@@ -48,8 +46,7 @@ export const EmployeeCreate = () => {
           validate={required()}
         />
 
-        {/* Salaire */}
-        <NumberInput
+         <NumberInput
           source="salary"
           label="Salaire"
           defaultValue={1500}
@@ -60,8 +57,7 @@ export const EmployeeCreate = () => {
       ]}
         />
 
-        {/* Actif */}
-        <BooleanInput
+         <BooleanInput
           source="active"
           label="Actif"
           defaultValue={true}
