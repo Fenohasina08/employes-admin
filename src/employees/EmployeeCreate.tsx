@@ -7,6 +7,7 @@ import {
   BooleanInput,
   required,
   minValue,
+  email
 } from "react-admin";
 
 export const EmployeeCreate = () => {
@@ -26,11 +27,14 @@ export const EmployeeCreate = () => {
         />
 
         {/* Email */}
-        <TextInput
-          source="email"
-          label="Email"
-          validate={required()}
-        />
+       <TextInput
+        source="email"
+        label="Email"
+        validate={[
+          required("L'email est obligatoire"),
+          email("Adresse email terminaison par @gmail.com"),
+        ]}
+      />
 
         {/* Département */}
         <SelectInput
