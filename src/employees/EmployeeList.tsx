@@ -39,12 +39,12 @@ export const EmployeeList = () => {
       perPage={5}   // ⭐ clé principale
     >
       <Datagrid rowClick="show">
-
-        <TextField source="Prénom" />
-        <TextField source="Email" />
-        <TextField source="Département" />
-        <TextField source="Salaire" />
-        <TextField source="Actif" />
+  
+        <TextField source="firstName" label="Prénom" />
+        <TextField source="email" label="Email" />
+        <TextField source="department" label="Département" />
+        <TextField source="salary" label="Salaire" />
+        <TextField source="active" label="Actif" />
 
         {/* Salaire en € */}
         <NumberField
