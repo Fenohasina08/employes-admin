@@ -46,15 +46,6 @@
       "active": false
     },
     {
-      "Active": true,
-      "firstName": "bob",
-      "lastName": "tobias",
-      "email": "bob",
-      "department": "Marketing",
-      "Salary": 3000,
-      "id": 6
-    },
-    {
       "active": true,
       "firstName": "testfoana",
       "lastName": "test",

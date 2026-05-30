@@ -48,6 +48,7 @@ export const EmployeeCreate = () => {
         <NumberInput
           source="salary"
           label="Salaire"
+          defaultValue={1500}
           validate={[required(), minValue(1500)]}
         />
 
