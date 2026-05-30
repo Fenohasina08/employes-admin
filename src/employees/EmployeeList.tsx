@@ -36,7 +36,7 @@ export const EmployeeList = () => {
      <List
       filters={employeeFilters}
       pagination={<EmployeePagination />}
-      perPage={5}   // ⭐ clé principale
+      perPage={5}   
     >
       <Datagrid rowClick="show">
   
@@ -46,8 +46,7 @@ export const EmployeeList = () => {
         <TextField source="salary" label="Salaire" />
         <TextField source="active" label="Actif" />
 
-        {/* Salaire en € */}
-        <NumberField
+         <NumberField
           source="salary"
           options={{
             style: "currency",
@@ -55,8 +54,7 @@ export const EmployeeList = () => {
           }}
         />
 
-        {/* Actif */}
-        <BooleanField source="active" />
+         <BooleanField source="active" />
             <EditButton />
             <DeleteButton />
       </Datagrid>
