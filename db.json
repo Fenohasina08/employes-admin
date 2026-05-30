@@ -44,6 +44,24 @@
       "department": "RH",
       "salary": 2000,
       "active": false
+    },
+    {
+      "Active": true,
+      "firstName": "bob",
+      "lastName": "tobias",
+      "email": "bob",
+      "department": "Marketing",
+      "Salary": 3000,
+      "id": 6
+    },
+    {
+      "active": true,
+      "firstName": "testfoana",
+      "lastName": "test",
+      "email": "testEmail",
+      "department": "RH",
+      "salary": 12000,
+      "id": 7
     }
   ]
 }

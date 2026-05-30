@@ -214,17 +214,7 @@ export const EmployeeEdit = () => {
           fullWidth
         />
 
-        {/*
-        |--------------------------------------------------------------------------
-        | Champ Active
-        |--------------------------------------------------------------------------
-        |
-        | BooleanInput crée une checkbox.
-        |
-        | true  -> cochée
-        | false -> décochée
-        |
-        */}
+         
 
         <BooleanInput
           source="active"
