@@ -50,7 +50,10 @@ export const EmployeeCreate = () => {
           label="Salaire"
           defaultValue={1500}
           min={1500}
-          validate={[required(), minValue(1500)]}
+            validate={[
+            required("Le salaire est obligatoire"),
+            minValue(1500, "Le salaire doit être supérieur ou égal à 1500")
+      ]}
         />
 
         {/* Actif */}
