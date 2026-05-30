@@ -2,48 +2,48 @@
   "employees": [
     {
       "id": 1,
-      "Prénom": "Alice",
-      "Nom": "Martin",
-      "Email": "alice@company.com",
-      "Département": "Informatique",
-      "Salaire": 2800,
-      "Actif": true
+      "firstName": "Alice",
+      "lastName": "Martin",
+      "email": "alice@company.com",
+      "department": "Informatique",
+      "salary": 2800,
+      "active": true
     },
     {
       "id": 2,
-      "Prénom": "Bob",
-      "Nom": "Dupont",
-      "Email": "bob@company.com",
-      "Département": "Marketing",
-      "Salaire": 2500,
-      "Actif": true
+      "firstName": "Bob",
+      "lastName": "Dupont",
+      "email": "bob@company.com",
+      "department": "Marketing",
+      "salary": 2500,
+      "active": true
     },
     {
       "id": 3,
-      "Prénom": "Clara",
-      "Nom": "Nguyen",
-      "Email": "clara@company.com",
-      "Département": "RH",
-      "Salaire": 2600,
-      "Actif": false
+      "firstName": "Clara",
+      "lastName": "Nguyen",
+      "email": "clara@company.com",
+      "department": "RH",
+      "salary": 2600,
+      "active": false
     },
     {
       "id": 4,
-      "Prénom": "testPrenom",
-      "Nom": "testNom",
-      "Email": "testemail@gmail.com",
-      "Département": "Informatique",
-      "Salaire": 2000,
-      "Actif": true
+      "firstName": "testPrenom",
+      "lastName": "testNom",
+      "email": "testemail@gmail.com",
+      "department": "Informatique",
+      "salary": 2000,
+      "active": true
     },
     {
       "id": 5,
-      "Prénom": "testPrenom2",
-      "Nom": "testNom2",
-      "Email": "teste2mail@gmail.com",
-      "Département": "RH",
-      "Salaire": 2000,
-      "Actif": false
+      "firstName": "testPrenom2",
+      "lastName": "testNom2",
+      "email": "teste2mail@gmail.com",
+      "department": "RH",
+      "salary": 2000,
+      "active": false
     }
   ]
 }
