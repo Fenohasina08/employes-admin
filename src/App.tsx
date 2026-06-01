@@ -4,6 +4,10 @@ import { EmployeeList } from "./employees/EmployeeList";
 import { EmployeeCreate } from "./employees/EmployeeCreate";
 import { EmployeeShow } from "./employees/EmployeeShow";
 import { EmployeeEdit } from "./employees/EmployeeEdit";
+import { InternsShow } from "./interns/InternsShow";
+import { InternsEdit } from "./interns/InternsEdit";
+import { InternsCreate } from "./interns/InternsCreate";
+import { InternsList } from "./interns/InternsList";
 
 const dataProvider = jsonServerProvider("http://localhost:3002");
 
@@ -16,6 +20,14 @@ export default function App() {
   create={EmployeeCreate}
   edit={EmployeeEdit}
   show={EmployeeShow}
+/>
+
+<Resource
+  name="interns"
+  list={InternsList}
+  create={InternsCreate}
+  edit={InternsEdit}
+  show={InternsShow }
 />
     </Admin>
   );
