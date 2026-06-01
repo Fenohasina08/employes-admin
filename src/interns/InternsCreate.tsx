@@ -1,0 +1,68 @@
+import {
+  Create,
+  SimpleForm,
+  TextInput,
+  SelectInput,
+  NumberInput,
+  BooleanInput,
+  required,
+  minValue,
+  email
+} from "react-admin";
+
+export const EmployeeCreate = () => {
+  return (
+    <Create redirect="list">
+      <SimpleForm>
+         <TextInput
+          source="firstName"
+          label="Prénom"
+          validate={required()}
+        />
+
+         <TextInput
+          source="lastName"
+          label="Nom"
+          validate={required()}
+        />
+
+        <TextInput
+        source="email"
+        label="Email"
+        validate={[
+          required("L'email est obligatoire"),
+          email("Adresse email terminaison par @gmail.com"),
+        ]}
+      />
+
+         <SelectInput
+          source="department"
+          label="Département"
+          choices={[
+            { id: "Informatique", name: "Informatique" },
+            { id: "Marketing", name: "Marketing" },
+            { id: "RH", name: "RH" },
+          ]}
+          validate={required()}
+        />
+
+         <NumberInput
+          source="salary"
+          label="Salaire"
+          defaultValue={1500}
+          min={1500}
+            validate={[
+            required("Le salaire est obligatoire"),
+            minValue(1500, "Le salaire doit être supérieur ou égal à 1500")
+      ]}
+        />
+
+         <BooleanInput
+          source="active"
+          label="Actif"
+          defaultValue={true}
+        />
+      </SimpleForm>
+    </Create>
+  );
+};
