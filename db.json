@@ -26,33 +26,39 @@
       "department": "RH",
       "salary": 2600,
       "active": false
-    },
+    }
+  ],
+
+  "interns": [
     {
-      "id": 4,
-      "firstName": "testPrenom",
-      "lastName": "testNom",
-      "email": "testemail@gmail.com",
+      "id": 1,
+      "firstName": "David",
+      "lastName": "Herimamy",
+      "email": "david.intern@company.com",
       "department": "Informatique",
-      "salary": 2000,
-      "active": true
-    },
-    {
-      "id": 5,
-      "firstName": "testPrenom2",
-      "lastName": "testNom2",
-      "email": "teste2mail@gmail.com",
-      "department": "RH",
-      "salary": 2000,
-      "active": false
-    },
-    {
+      "salary": 1500,
       "active": true,
-      "firstName": "testfoana",
-      "lastName": "test",
-      "email": "testEmail",
+      "employeeId": 1
+    },
+    {
+      "id": 2,
+      "firstName": "Sarah",
+      "lastName": "Rakoto",
+      "email": "sarah.intern@company.com",
+      "department": "Marketing",
+      "salary": 1500,
+      "active": true,
+      "employeeId": 2
+    },
+    {
+      "id": 3,
+      "firstName": "Lucas",
+      "lastName": "Andria",
+      "email": "lucas.intern@company.com",
       "department": "RH",
-      "salary": 12000,
-      "id": 7
+      "salary": 1500,
+      "active": false,
+      "employeeId": 3
     }
   ]
 }
