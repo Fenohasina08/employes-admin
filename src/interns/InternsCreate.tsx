@@ -7,35 +7,36 @@ import {
   BooleanInput,
   required,
   minValue,
-  email
+  email,
 } from "react-admin";
 
-export const EmployeeCreate = () => {
+export const InternsCreate = () => {
   return (
     <Create redirect="list">
       <SimpleForm>
-         <TextInput
+
+        <TextInput
           source="firstName"
           label="Prénom"
-          validate={required()}
-        />
-
-         <TextInput
-          source="lastName"
-          label="Nom"
-          validate={required()}
+          validate={required("Prénom obligatoire")}
         />
 
         <TextInput
-        source="email"
-        label="Email"
-        validate={[
-          required("L'email est obligatoire"),
-          email("Adresse email terminaison par @gmail.com"),
-        ]}
-      />
+          source="lastName"
+          label="Nom"
+          validate={required("Nom obligatoire")}
+        />
 
-         <SelectInput
+        <TextInput
+          source="email"
+          label="Email"
+          validate={[
+            required("Email obligatoire"),
+            email("Email invalide"),
+          ]}
+        />
+
+        <SelectInput
           source="department"
           label="Département"
           choices={[
@@ -43,25 +44,38 @@ export const EmployeeCreate = () => {
             { id: "Marketing", name: "Marketing" },
             { id: "RH", name: "RH" },
           ]}
-          validate={required()}
+          validate={required("Département obligatoire")}
         />
 
-         <NumberInput
+        <NumberInput
           source="salary"
           label="Salaire"
           defaultValue={1500}
           min={1500}
-            validate={[
-            required("Le salaire est obligatoire"),
-            minValue(1500, "Le salaire doit être supérieur ou égal à 1500")
-      ]}
+          validate={[
+            required("Salaire obligatoire"),
+            minValue(1500, "Salaire minimum 1500"),
+          ]}
         />
 
-         <BooleanInput
+        <BooleanInput
           source="active"
           label="Actif"
           defaultValue={true}
         />
+
+        {/* 🔥 LIEN AVEC L’ENCADRANT */}
+        <SelectInput
+          source="employeeId"
+          label="Encadrant"
+          choices={[
+            { id: 1, name: "Alice Martin" },
+            { id: 2, name: "Bob Dupont" },
+            { id: 3, name: "Clara Nguyen" },
+          ]}
+          validate={required("Encadrant obligatoire")}
+        />
+
       </SimpleForm>
     </Create>
   );
