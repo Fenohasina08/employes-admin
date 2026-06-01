@@ -7,9 +7,10 @@ import {
   TopToolbar,
   ListButton,
   EditButton,
+  ReferenceField,
 } from "react-admin";
 
-const EmployeeShowActions = () => {
+const InternsShowActions = () => {
   return (
     <TopToolbar>
       <ListButton />
@@ -18,37 +19,38 @@ const EmployeeShowActions = () => {
   );
 };
 
-export const EmployeeShow = () => {
+export const InternsShow = () => {
   return (
-    <Show actions={<EmployeeShowActions />}>
+    <Show actions={<InternsShowActions />}>
       <SimpleShowLayout>
 
-        <TextField
-          source="firstname"
-          label="Prénom"
-        />
+        <TextField source="firstName" label="Prénom" />
+        <TextField source="lastName" label="Nom" />
 
-        <TextField
-          source="lastname"
-          label="Nom"
-        />
+        <TextField source="email" label="Email" />
 
-        <TextField source="email" />
-
-        <TextField
-          source="department"
-          label="Département"
-        />
+        <TextField source="department" label="Département" />
 
         <NumberField
           source="salary"
+          label="Salaire"
           options={{
             style: "currency",
             currency: "EUR",
           }}
         />
 
-        <BooleanField source="active" />
+        <BooleanField source="active" label="Actif" />
+
+        {/* 🔥 Encadrant (relation avec employees) */}
+        <ReferenceField
+          source="employeeId"
+          reference="employees"
+          label="Encadrant"
+        >
+          <TextField source="firstName" />{" "}
+          <TextField source="lastName" />
+        </ReferenceField>
 
       </SimpleShowLayout>
     </Show>
