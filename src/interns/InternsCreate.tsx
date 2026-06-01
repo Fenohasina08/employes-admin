@@ -64,8 +64,7 @@ export const InternsCreate = () => {
           defaultValue={true}
         />
 
-        {/* 🔥 LIEN AVEC L’ENCADRANT */}
-        <SelectInput
+         <SelectInput
           source="employeeId"
           label="Encadrant"
           choices={[
