@@ -9,13 +9,7 @@ import {
   minValue,
   useRecordContext,
 } from "react-admin";
-
-/*
-|--------------------------------------------------------------------------
-| Title Interns
-|--------------------------------------------------------------------------
-*/
-
+ 
 const InternsTitle = () => {
   const record = useRecordContext();
 
@@ -26,11 +20,7 @@ const InternsTitle = () => {
   );
 };
 
-/*
-|--------------------------------------------------------------------------
-| Edit Interns
-|--------------------------------------------------------------------------
-*/
+ 
 
 export const InternsEdit = () => {
   return (
@@ -85,8 +75,7 @@ export const InternsEdit = () => {
           label="Actif"
         />
 
-        {/* 🔥 VERSION PRO : encadrant propre */}
-        <SelectInput
+         <SelectInput
           source="employeeId"
           label="Encadrant"
           choices={[

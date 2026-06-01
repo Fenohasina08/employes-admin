@@ -42,8 +42,7 @@ export const InternsShow = () => {
 
         <BooleanField source="active" label="Actif" />
 
-        {/* 🔥 Encadrant (relation avec employees) */}
-        <ReferenceField
+         <ReferenceField
           source="employeeId"
           reference="employees"
           label="Encadrant"
