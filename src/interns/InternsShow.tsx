@@ -46,6 +46,7 @@ export const InternsShow = () => {
           source="employeeId"
           reference="employees"
           label="Encadrant"
+          link="show"
         >
           <TextField source="firstName" />{" "}
           <TextField source="lastName" />
