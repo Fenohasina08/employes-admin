@@ -38,7 +38,9 @@
       "department": "Informatique",
       "salary": 1500,
       "active": true,
-      "employeeId": 1
+      "employeeId": 1,
+      "isRemunarate": true,
+      "renumeration": 1500
     },
     {
       "id": 2,
@@ -48,7 +50,9 @@
       "department": "Marketing",
       "salary": 1500,
       "active": true,
-      "employeeId": 2
+      "employeeId": 2,
+      "isRemunarate": true,
+      "renumeration": 1500
     },
     {
       "id": 3,
@@ -58,7 +62,35 @@
       "department": "RH",
       "salary": 1500,
       "active": false,
-      "employeeId": 3
-    }
+      "employeeId": 3,
+      "isRemunarate": true,
+      "renumeration": 1500
+    },
+
+    {
+      "id": 4,
+      "firstName": "Emma",
+      "lastName": "Rajaonarivelo",
+      "email": "emma.intern@company.com",
+      "department": "Informatique",
+      "salary": 1500,
+      "active": true,
+      "employeeId": 1,
+      "isRemunarate": true,
+      "renumeration": 1500
+    },
+
+    {
+      "id": 5,
+      "firstName": "Liam",
+      "lastName": "Rasolo",
+      "email": "alice@company.com",
+      "department": "Marketing",
+      "salary": 1500,
+      "active": true,
+      "employeeId": 2,
+      "isRemunarate": false,
+      "renumeration": 0}
+
   ]
 }
