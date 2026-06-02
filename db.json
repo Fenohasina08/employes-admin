@@ -39,8 +39,8 @@
       "salary": 1500,
       "active": true,
       "employeeId": 1,
-      "isRemunarate": true,
-      "renumeration": 1500
+      "isRemunerate": true,
+      "remuneration": 1500
     },
     {
       "id": 2,
@@ -51,8 +51,8 @@
       "salary": 1500,
       "active": true,
       "employeeId": 2,
-      "isRemunarate": true,
-      "renumeration": 1500
+      "isRemunerate": true,
+      "remuneration": 1500
     },
     {
       "id": 3,
@@ -63,8 +63,8 @@
       "salary": 1500,
       "active": false,
       "employeeId": 3,
-      "isRemunarate": true,
-      "renumeration": 1500
+      "isRemunerate": true,
+      "remuneration": 1500
     },
 
     {
@@ -76,8 +76,8 @@
       "salary": 1500,
       "active": true,
       "employeeId": 1,
-      "isRemunarate": true,
-      "renumeration": 1500
+      "isRemunerate": true,
+      "remuneration": 1500
     },
 
     {
@@ -89,8 +89,8 @@
       "salary": 1500,
       "active": true,
       "employeeId": 2,
-      "isRemunarate": false,
-      "renumeration": 0}
+      "isRemunerate": false,
+      "remuneration": 0}
 
   ]
 }
