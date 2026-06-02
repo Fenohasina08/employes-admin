@@ -89,3 +89,10 @@ Le composant <ReferenceField> émet une requête HTTP avec la méthode GET vers 
 
 ###  6.2 : Que se passe-t-il visuellement si managerId ne correspond à aucun employé ?
 Si le managerId ne correspond à aucun employé existant, l'application ne produit pas de plantage. Visuellement, la colonne "Encadrant" reste simplement vide pour cette ligne du tableau.
+
+# Exercice 7 — InternCreate & InternEdit
+
+### 7.1 : Quelle méthode HTTP est émise lors de la soumission de InternCreate ? Vers quel endpoint ?
+Une méthode POST est émise vers l'endpoint /interns pour insérer le nouveau stagiaire en base de données.
+### 7.2 : 7.2 : Quel hook utilisez-vous pour la validation conditionnelle de remuneration, et pourquoi ?
+Le hook utilisé est useWatch de la bibliothèque react-hook-form. On l'utilise car la validation par défaut est statique. useWatch permet de surveiller la valeur de la case à cocher isRemunerate en temps réel. Ainsi, le formulaire sait instantanément s'il doit rendre le champ remuneration obligatoire ou non.
