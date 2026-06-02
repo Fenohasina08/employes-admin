@@ -80,3 +80,12 @@ if (!record) return null;
 - **TabbedShowLayout** : divise les informations en plusieurs onglets (tabs). C'est utile quand on a beaucoup de champs et qu'on veut les organiser par catégorie. Par exemple un onglet "Infos personnelles", un autre "Infos contrat", etc.
 
 Pour notre exercice avec peu de champs, `SimpleShowLayout` est largement suffisant.
+
+## Exercice 6 - InternList
+
+### Question 6.1:  ReferenceField génère quel appel HTTP pour résoudre le manager ? Vérifiez dans l'onglet Network de votre navigateur.  
+
+Le composant <ReferenceField> émet une requête HTTP avec la méthode GET vers l'endpoint http://localhost:3002/employees/{id} (où {id} représente l'identifiant du manager) afin de récupérer les détails de l'employé associé au stagiaire.
+
+###  6.2 : Que se passe-t-il visuellement si managerId ne correspond à aucun employé ?
+Si le managerId ne correspond à aucun employé existant, l'application ne produit pas de plantage. Visuellement, la colonne "Encadrant" reste simplement vide pour cette ligne du tableau.
