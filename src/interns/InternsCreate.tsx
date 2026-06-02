@@ -1,80 +1,62 @@
-import {
-  Create,
-  SimpleForm,
-  TextInput,
-  SelectInput,
-  NumberInput,
-  BooleanInput,
-  required,
-  minValue,
-  email,
-} from "react-admin";
+import { Create, SimpleForm, TextInput, SelectInput,ReferenceInput,
+   NumberInput, BooleanInput, required, minValue, email } from "react-admin";
+import { useWatch } from "react-hook-form";
+
+const InternFormInputs = () => {
+   const isRemunerate = useWatch({ name: "isRemunerate" });
+   const department = useWatch({ name: "department" });
+
+  return (
+    <>
+      <TextInput source="firstName" label="Prénom" validate={required("Prénom obligatoire")} />
+      <TextInput source="lastName" label="Nom" validate={required("Nom obligatoire")} />
+      <TextInput source="email" label="Email" validate={[required("Email obligatoire"), email("Email invalide")]} />
+      
+      <SelectInput
+        source="department"
+        label="Département"
+        choices={[
+          { id: "Informatique", name: "Informatique" },
+          { id: "Marketing", name: "Marketing" },
+          { id: "RH", name: "RH" },
+        ]}
+        validate={required("Département obligatoire")}
+      />
+
+       <BooleanInput source="isRemunerate" label="Stagiaire rémunéré" defaultValue={false} />
+
+       <NumberInput
+        source="remuneration"
+        label="Rémunération"
+        validate= {isRemunerate ? [required("Rémunération obligatoire"),
+           minValue(0, "La rémunération doit être positive")] : []}
+      />
+
+      <ReferenceInput 
+  source="employeeId" 
+  reference="employees" 
+  filter= {{
+    active: true,
+    department: department ? department : undefined
+  }}
+>
+  <SelectInput 
+    label="Encadrant" 
+    optionText={(record) => `${record.firstName} ${record.lastName}`} 
+    validate={required("Encadrant obligatoire")}
+  />
+</ReferenceInput>
+
+      <BooleanInput source="active" label="Actif" defaultValue={true} />
+    </>
+  );
+};
 
 export const InternsCreate = () => {
   return (
     <Create redirect="list">
       <SimpleForm>
-
-        <TextInput
-          source="firstName"
-          label="Prénom"
-          validate={required("Prénom obligatoire")}
-        />
-
-        <TextInput
-          source="lastName"
-          label="Nom"
-          validate={required("Nom obligatoire")}
-        />
-
-        <TextInput
-          source="email"
-          label="Email"
-          validate={[
-            required("Email obligatoire"),
-            email("Email invalide"),
-          ]}
-        />
-
-        <SelectInput
-          source="department"
-          label="Département"
-          choices={[
-            { id: "Informatique", name: "Informatique" },
-            { id: "Marketing", name: "Marketing" },
-            { id: "RH", name: "RH" },
-          ]}
-          validate={required("Département obligatoire")}
-        />
-
-        <NumberInput
-          source="salary"
-          label="Salaire"
-          defaultValue={1500}
-          min={1500}
-          validate={[
-            required("Salaire obligatoire"),
-            minValue(1500, "Salaire minimum 1500"),
-          ]}
-        />
-
-        <BooleanInput
-          source="active"
-          label="Actif"
-          defaultValue={true}
-        />
-
-         <SelectInput
-          source="employeeId"
-          label="Encadrant"
-          choices={[
-            { id: 1, name: "Alice Martin" },
-            { id: 2, name: "Bob Dupont" },
-            { id: 3, name: "Clara Nguyen" },
-          ]}
-          validate={required("Encadrant obligatoire")}
-        />
-
+        <InternFormInputs />
       </SimpleForm>
     </Create>
   );

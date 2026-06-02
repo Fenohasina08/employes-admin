@@ -32,13 +32,13 @@ const internsFilters = [
       { id: "Marketing", name: "Marketing" },
       { id: "RH", name: "RH" },
     ]}
-  />
+  />,
 
   <NullableBooleanInput 
   label="Rénuméré ?"
   source= "isRemunerate"
-];
-
+/>
+]
 export const InternsList = () => {
   return (
     <List
