@@ -2,7 +2,7 @@ import { Create, SimpleForm, TextInput, SelectInput,ReferenceInput,
    NumberInput, BooleanInput, required, minValue, email } from "react-admin";
 import { useWatch } from "react-hook-form";
 
-const InternFormInputs = () => {
+export const InternFormInputs = () => {
    const isRemunerate = useWatch({ name: "isRemunerate" });
    const department = useWatch({ name: "department" });
 

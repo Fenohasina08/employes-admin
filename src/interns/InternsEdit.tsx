@@ -9,7 +9,7 @@ import {
   minValue,
   useRecordContext,
 } from "react-admin";
-import { InternFromInputs } from "./InternsCreate";
+import { InternFormInputs } from "./InternsCreate";
 
 const InternsTitle = () => {
   const record = useRecordContext();
@@ -87,7 +87,7 @@ export const InternsEdit = () => {
           validate={required("Encadrant obligatoire")}
           fullWidth
         />
-        <InternFromInputs />
+        <InternFormInputs />
       </SimpleForm>
     </Edit>
   );
