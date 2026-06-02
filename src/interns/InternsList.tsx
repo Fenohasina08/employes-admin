@@ -10,6 +10,7 @@ import {
   EditButton,
   DeleteButton,
   ReferenceField,
+  NullableBooleanInput,
 } from "react-admin";
 
 const InternsPagination = () => (
@@ -32,6 +33,10 @@ const internsFilters = [
       { id: "RH", name: "RH" },
     ]}
   />
+
+  <NullableBooleanInput 
+  label="Rénuméré ?"
+  source= "isRemunerate"
 ];
 
 export const InternsList = () => {
