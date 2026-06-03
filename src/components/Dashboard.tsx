@@ -1,5 +1,6 @@
 import { useGetList } from "react-admin";
 import { Grid, Card, CardContent, Typography, CircularProgress } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export const Dashboard = () => {
   const { total: totalEmployees, isPending: loadingEmp } = useGetList("employees", {
@@ -20,8 +21,17 @@ export const Dashboard = () => {
     filter: { isRemunerate: true },
   });
 
-  const renderCard = (title: string, value: number | undefined, loading: boolean, color: string) => (
-    <Card style={{ borderTop: `4px solid ${color}`, height: "100%" }}>
+  const renderCard = (title: string, value: number | undefined, loading: boolean, color: string, to: string) => (
+    <Card 
+      component={Link} 
+      to={to} 
+      style={{ 
+        borderTop: `4px solid ${color}`, 
+        height: "100%", 
+        textDecoration: "none", 
+        cursor: "pointer" 
+      }}
+    >
       <CardContent style={{ textAlign: "center" }}>
         <Typography variant="subtitle2" color="textSecondary" gutterBottom style={{ fontWeight: "bold", textTransform: "uppercase" }}>
           {title}
@@ -41,16 +51,16 @@ export const Dashboard = () => {
       
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6} md={3}>
-          {renderCard("Total Employés", totalEmployees, loadingEmp, "#2196f3")}
+          {renderCard("Total Employés", totalEmployees, loadingEmp, "#2196f3", "/employees")}
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
-          {renderCard("Employés Actifs", activeEmployees, loadingActive, "#4caf50")}
+          {renderCard("Employés Actifs", activeEmployees, loadingActive, "#4caf50", '/employees?filter={"active":true}')}
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
-          {renderCard("Total Stagiaires", totalInterns, loadingInterns, "#ff9800")}
+          {renderCard("Total Stagiaires", totalInterns, loadingInterns, "#ff9800", "/interns")}
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
-          {renderCard("Stagiaires Rémunérés", paidInterns, loadingPaid, "#e91e63")}
+          {renderCard("Stagiaires Rémunérés", paidInterns, loadingPaid, "#e91e63", '/interns?filter={"isRemunerate":true}')}
         </Grid>
       </Grid>
     </div>
