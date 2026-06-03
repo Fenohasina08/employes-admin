@@ -149,3 +149,10 @@ Le hook useCreate  : C'est juste une fonction invisible (sans aucune interface).
 Le comportement automatique : React-Admin est intelligent. Dès que useCreate réussit à créer un nouveau stagiaire, il prévient automatiquement le système de cache de l'application. La liste des stagiaires détecte ce changement et se recharche toute seule en arrière-plan pour afficher la nouvelle ligne.
 
 La méthode manuelle (si besoin) : Si la liste refuse de bouger, on peut utiliser le hook useRefresh() de React-Admin et l'exécuter dans le bloc onSuccess de notre fonction de création pour forcer le rafraîchissement visuel.
+
+# Exercice 12 — Dashboard
+
+### 12.1 : Les 4 appels useGetList se font-ils en parallèle ou en séquence ? Justifiez.
+Ils se font en parallèle. React-Admin utilise React Query en arrière-plan. Lorsque le composant est chargé, tous les hooks s'exécutent simultanément et le navigateur envoie les 4 requêtes HTTP en même temps sans attendre la réponse des unes pour lancer les autres.
+### 12.2 : Pourquoi perPage: 1 est préférable à perPage: 100 ici ?
+Pour optimiser les performances. Le Dashboard a uniquement besoin du nombre global (la propriété total) et n'affiche aucune liste de données. En configurant perPage: 1, le serveur calcule le total mais ne renvoie l'objet complet que d'un seul enregistrement. Cela réduit la taille de la réponse HTTP et économise les ressources du serveur et du réseau.
