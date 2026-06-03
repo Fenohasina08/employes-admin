@@ -1,13 +1,21 @@
 import { useGetList } from "react-admin";
 import { Grid, Typography, CircularProgress } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useTheme } from "@mui/material/styles";
 
 export const Dashboard = () => {
+  const theme = useTheme(); // ⭐ récupère light/dark automatiquement
+
+  const isDark = theme.palette.mode === "dark";
+
+  const bgCard = isDark ? "#0f172a" : "#ffffff";
+  const pageBg = isDark ? "#020617" : "#f8fafc";
+  const textPrimary = isDark ? "#ffffff" : "#0f172a";
+  const textSecondary = isDark ? "#94a3b8" : "#64748b";
+
   const { total: totalEmployees, isPending: loadingEmp } = useGetList(
     "employees",
-    {
-      pagination: { page: 1, perPage: 1 },
-    }
+    { pagination: { page: 1, perPage: 1 } }
   );
 
   const { total: activeEmployees, isPending: loadingActive } = useGetList(
@@ -20,9 +28,7 @@ export const Dashboard = () => {
 
   const { total: totalInterns, isPending: loadingInterns } = useGetList(
     "interns",
-    {
-      pagination: { page: 1, perPage: 1 },
-    }
+    { pagination: { page: 1, perPage: 1 } }
   );
 
   const { total: paidInterns, isPending: loadingPaid } = useGetList(
@@ -50,7 +56,7 @@ export const Dashboard = () => {
     >
       <div
         style={{
-          background: "#0f172a",
+          background: bgCard,
           border: `1px solid ${color}40`,
           borderRadius: "20px",
           padding: "24px",
@@ -58,8 +64,10 @@ export const Dashboard = () => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          backgroundImage: `linear-gradient(135deg, ${color}25, transparent)`,
-          boxShadow: "0 10px 30px rgba(0,0,0,0.25)",
+          backgroundImage: `linear-gradient(135deg, ${color}20, transparent)`,
+          boxShadow: isDark
+            ? "0 10px 30px rgba(0,0,0,0.35)"
+            : "0 6px 18px rgba(0,0,0,0.08)",
           transition: "0.3s ease",
           cursor: "pointer",
         }}
@@ -69,7 +77,7 @@ export const Dashboard = () => {
             width: "48px",
             height: "48px",
             borderRadius: "12px",
-            border: `1px solid ${color}50`,
+            border: `1px solid ${color}60`,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -83,7 +91,7 @@ export const Dashboard = () => {
         <div>
           <Typography
             style={{
-              color: "#94a3b8",
+              color: textSecondary,
               fontSize: "12px",
               textTransform: "uppercase",
               letterSpacing: "1px",
@@ -94,9 +102,9 @@ export const Dashboard = () => {
 
           <Typography
             style={{
-              fontSize: "56px",
+              fontSize: "54px",
               fontWeight: "bold",
-              color,
+              color: textPrimary,
               lineHeight: 1,
               marginTop: "10px",
             }}
@@ -109,23 +117,23 @@ export const Dashboard = () => {
   );
 
   return (
-  <div
-  style={{
-    position: "fixed",
-    top: 0,
-    left: "240px",
-    width: "calc(100vw - 240px)",
-    height: "100vh",
-    padding: "30px",
-    background: "#020617",
-    color: "white",
-    overflowY: "auto",
-  }}
->
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: "240px",
+        width: "calc(100vw - 240px)",
+        height: "100vh",
+        padding: "30px",
+        background: pageBg,
+        color: textPrimary,
+        overflowY: "auto",
+      }}
+    >
       <Typography
         style={{
           fontSize: "14px",
-          color: "#64748b",
+          color: textSecondary,
           textTransform: "uppercase",
           letterSpacing: "2px",
         }}
@@ -139,6 +147,7 @@ export const Dashboard = () => {
           fontWeight: "bold",
           marginTop: "8px",
           marginBottom: "8px",
+          color: textPrimary,
         }}
       >
         Vue d'ensemble
@@ -146,7 +155,7 @@ export const Dashboard = () => {
 
       <Typography
         style={{
-          color: "#64748b",
+          color: textSecondary,
           marginBottom: "40px",
         }}
       >
