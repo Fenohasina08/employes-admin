@@ -8,7 +8,8 @@ import {
   ListButton,
   EditButton,
 } from "react-admin";
-import ManagerCard from "../components/ManagerCard";
+// 1. Importation corrigée avec les accolades et le "s"
+import { InternsByManager } from "../interns/InternsByManager"; 
 
 const EmployeeShowActions = () => {
   return (
@@ -50,7 +51,10 @@ export const EmployeeShow = () => {
         />
 
         <BooleanField source="active" />
-        <ManagerCard />
+        
+        {/* 2. Balise corrigée avec le "s" */}
+        <InternsByManager />
+        
       </SimpleShowLayout>
     </Show>
   );
