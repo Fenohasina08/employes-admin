@@ -124,3 +124,17 @@ Comment ça marche ? Au lieu de demander au serveur de nous donner les fiches de
 Pourquoi on a quand même le bon chiffre ? Le serveur est bien fait : même s'il ne nous envoie qu'une seule fiche, il calcule toujours le nombre total de résultats en arrière-plan. React-Admin récupère automatiquement ce chiffre dans la variable total.
 
 Le résultat : Le chargement est instantané parce que le réseau ne télécharge presque rien, mais notre compteur affiche quand même le vrai nombre global !
+
+# Exercice 10 — QuickStatusToggle (useUpdate)
+
+### 10.1 : Quelle méthode HTTP useUpdate utilise-t-il par défaut ? Comment forcer PATCH au lieu de PUT ?
+Par défaut : useUpdate utilise la méthode PUT (ce qui remplace la totalité de l'objet sur le serveur).
+
+Pour forcer PATCH : On ajoute une option dans le paramètre meta lors de l'appel, de cette manière :
+
+    update("employees", { id, data, meta: { method: 'PATCH' } })
+
+### 10.2 : Pourquoi previousData est-il nécessaire ? Que se passe-t-il si on l'omet ?
+Pourquoi c'est nécessaire ? React-Admin utilise le mode "optimiste" : quand tu cliques, l'interface change immédiatement de couleur sur l'écran sans attendre la réponse du serveur pour que l'application paraisse ultra-rapide.
+
+Que se passe-t-il si on l'omet ? Si la requête réseau échoue (panne de serveur, coupure internet), l'application doit pouvoir annuler le changement visuel. Sans previousData, React-Admin est incapable de revenir en arrière (pas de rollback). Le bouton restera bloqué sur le mauvais statut, affichant une fausse information à l'utilisateur.
