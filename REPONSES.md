@@ -97,3 +97,13 @@ Une méthode POST est émise vers l'endpoint /interns pour insérer le nouveau s
 ### 7.2 : 7.2 : Quel hook utilisez-vous pour la validation conditionnelle de remuneration, et pourquoi ?
 Le hook utilisé est useWatch de la bibliothèque react-hook-form. On l'utilise car la validation par défaut est statique. useWatch permet de surveiller la valeur de la case à cocher isRemunerate en temps réel. Ainsi, le formulaire sait instantanément s'il doit rendre le champ remuneration obligatoire ou non.
 
+# Exercice 8 — InternShow & ManagerCard
+
+# 8.1 : Quelle est la différence entre useGetOne et ReferenceField ? Quand préférer l'un ou l'autre ?
+-ReferenceField  est un composant d'interface (UI) clé en main. Il s'occupe de tout : appeler l'API, gérer l'affichage du texte et créer automatiquement un lien cliquable vers la ressource liée. On le préfère dans les structures d'affichage classiques (comme les tableaux ou les formulaires standard).
+
+-useGetOne  est un hook de données. Il ne fournit aucun visuel, mais uniquement les données brutes (data, isPending, error). On le préfère lorsqu'on doit construire un composant 100 % sur mesure avec une mise en page spécifique (comme notre ManagerCard).
+# 8.2 : Que se passe-t-il si useGetOne reçoit id: undefined sans l'option enabled ? Comment ce paramètre résout-il le problème ?
+-Sans enabled : Le hook s'exécute dès le premier affichage du composant. Si les données du stagiaire ne sont pas encore arrivées, l'ID vaut undefined. L'application va alors tenter d'appeler une URL invalide (comme /employees/undefined), ce qui déclenche une erreur 404 inutile dans la console réseau .
+
+-Avec enabled  : On lui passe une condition booléenne (ex: enabled: !!intern?.employeeId). Le hook attend sagement que l'identifiant soit disponible et valide avant de déclencher la requête HTTP, ce qui sécurise notre application.
