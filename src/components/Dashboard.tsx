@@ -109,14 +109,19 @@ export const Dashboard = () => {
   );
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        padding: "30px",
-        background: "#020617",
-        color: "white",
-      }}
-    >
+  <div
+  style={{
+    position: "fixed",
+    top: 0,
+    left: "240px",
+    width: "calc(100vw - 240px)",
+    height: "100vh",
+    padding: "30px",
+    background: "#020617",
+    color: "white",
+    overflowY: "auto",
+  }}
+>
       <Typography
         style={{
           fontSize: "14px",
