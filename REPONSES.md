@@ -142,7 +142,10 @@ Que se passe-t-il si on l'omet ? Si la requête réseau échoue (panne de serveu
 # Exercice 11 — useCreate & Formulaire rapide
 
 ### 11.1 - Quelle différence entre utiliser useCreate dans un composant custom et utiliser le composant <Create> de React-Admin ?
-Le composant <Create> 📄 : C'est une page entière clé en main fournie par React-Admin. Elle gère tout l'affichage, crée le formulaire et redirige automatiquement l'utilisateur vers une autre page (la liste ou le détail) après la sauvegarde.
+Le composant <Create>  : C'est une page entière clé en main fournie par React-Admin. Elle gère tout l'affichage, crée le formulaire et redirige automatiquement l'utilisateur vers une autre page (la liste ou le détail) après la sauvegarde.
 
-Le hook useCreate 🎣 : C'est juste une fonction invisible (sans aucune interface). Elle te permet d'envoyer des données au serveur depuis n'importe où, par exemple depuis un bouton ou une fenêtre modale (pop-up), sans changer de page et en gardant le contrôle total de ton design.
+Le hook useCreate  : C'est juste une fonction invisible (sans aucune interface). Elle te permet d'envoyer des données au serveur depuis n'importe où, par exemple depuis un bouton ou une fenêtre modale (pop-up), sans changer de page et en gardant le contrôle total de ton design.
 ### 11.2 : Comment gérez-vous le rechargement de la liste après une création réussie via useCreate ?
+Le comportement automatique : React-Admin est intelligent. Dès que useCreate réussit à créer un nouveau stagiaire, il prévient automatiquement le système de cache de l'application. La liste des stagiaires détecte ce changement et se recharche toute seule en arrière-plan pour afficher la nouvelle ligne.
+
+La méthode manuelle (si besoin) : Si la liste refuse de bouger, on peut utiliser le hook useRefresh() de React-Admin et l'exécuter dans le bloc onSuccess de notre fonction de création pour forcer le rafraîchissement visuel.
