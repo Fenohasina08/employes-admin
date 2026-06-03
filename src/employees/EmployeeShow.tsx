@@ -8,6 +8,7 @@ import {
   ListButton,
   EditButton,
 } from "react-admin";
+import ManagerCard from "../components/ManagerCard";
 
 const EmployeeShowActions = () => {
   return (
@@ -49,7 +50,7 @@ export const EmployeeShow = () => {
         />
 
         <BooleanField source="active" />
-
+        <ManagerCard />
       </SimpleShowLayout>
     </Show>
   );
