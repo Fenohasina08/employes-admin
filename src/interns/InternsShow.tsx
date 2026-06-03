@@ -4,11 +4,12 @@ import {
   TextField,
   NumberField,
   BooleanField,
-  TopToolbar,
+  TopToolbar, 
   ListButton,
   EditButton,
   ReferenceField,
 } from "react-admin";
+import ManagerCard from "../components/ManagerCard";
 
 const InternsShowActions = () => {
   return (
@@ -51,6 +52,7 @@ export const InternsShow = () => {
           <TextField source="firstName" />{" "}
           <TextField source="lastName" />
         </ReferenceField>
+        <ManagerCard />
 
       </SimpleShowLayout>
     </Show>

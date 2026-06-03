@@ -10,7 +10,6 @@ import {
   EditButton,
   DeleteButton,
 } from "react-admin";
-// 1. On importe le nouveau bouton magique
 import { QuickStatusToggle } from "../components/QuickStatusToggle"; 
 
 const EmployeePagination = () => <Pagination rowsPerPageOptions={[5, 10, 25]} />;
@@ -40,7 +39,6 @@ export const EmployeeList = () => {
       perPage={5}   
     >
       <Datagrid rowClick="show">
-        {/* Les informations de base de l'employé */}
         <TextField source="firstName" label="Prénom" />
         <TextField source="email" label="Email" />
         <TextField source="department" label="Département" />
