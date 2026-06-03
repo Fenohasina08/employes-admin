@@ -32,7 +32,7 @@ export const InternsShow = () => {
         <TextField source="department" label="Département" />
 
         <NumberField
-          source="salary"
+          source="remuneration"
           label="Salaire"
           options={{
             style: "currency",
