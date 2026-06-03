@@ -138,3 +138,11 @@ Pour forcer PATCH : On ajoute une option dans le paramètre meta lors de l'appel
 Pourquoi c'est nécessaire ? React-Admin utilise le mode "optimiste" : quand tu cliques, l'interface change immédiatement de couleur sur l'écran sans attendre la réponse du serveur pour que l'application paraisse ultra-rapide.
 
 Que se passe-t-il si on l'omet ? Si la requête réseau échoue (panne de serveur, coupure internet), l'application doit pouvoir annuler le changement visuel. Sans previousData, React-Admin est incapable de revenir en arrière (pas de rollback). Le bouton restera bloqué sur le mauvais statut, affichant une fausse information à l'utilisateur.
+
+# Exercice 11 — useCreate & Formulaire rapide
+
+### 11.1 - Quelle différence entre utiliser useCreate dans un composant custom et utiliser le composant <Create> de React-Admin ?
+Le composant <Create> 📄 : C'est une page entière clé en main fournie par React-Admin. Elle gère tout l'affichage, crée le formulaire et redirige automatiquement l'utilisateur vers une autre page (la liste ou le détail) après la sauvegarde.
+
+Le hook useCreate 🎣 : C'est juste une fonction invisible (sans aucune interface). Elle te permet d'envoyer des données au serveur depuis n'importe où, par exemple depuis un bouton ou une fenêtre modale (pop-up), sans changer de page et en gardant le contrôle total de ton design.
+### 11.2 : Comment gérez-vous le rechargement de la liste après une création réussie via useCreate ?
