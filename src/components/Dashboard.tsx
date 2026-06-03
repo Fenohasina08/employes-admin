@@ -70,7 +70,8 @@ export const Dashboard = () => {
           border: `1px solid ${color}40`,
           borderRadius: "20px",
           padding: "24px",
-          height: "180px",
+          height: "220px",
+          width: "15vw",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
@@ -84,7 +85,7 @@ export const Dashboard = () => {
       >
         <div
           style={{
-            width: "48px",
+            width: "58px",
             height: "48px",
             borderRadius: "12px",
             border: `1px solid ${color}60`,
@@ -105,6 +106,7 @@ export const Dashboard = () => {
               fontSize: "12px",
               textTransform: "uppercase",
               letterSpacing: "1px",
+              textAlign: "center",
             }}
           >
             {title}
@@ -112,7 +114,7 @@ export const Dashboard = () => {
 
           <Typography
             style={{
-              fontSize: "54px",
+              fontSize: "68px",
               fontWeight: "bold",
               color: textPrimary,
               lineHeight: 1,
@@ -126,8 +128,7 @@ export const Dashboard = () => {
     </Link>
   );
 
-  // ── Chart data derived from fetched totals ──────────────────────────────
-  const inactiveEmployees = (totalEmployees ?? 0) - (activeEmployees ?? 0);
+   const inactiveEmployees = (totalEmployees ?? 0) - (activeEmployees ?? 0);
   const unpaidInterns = (totalInterns ?? 0) - (paidInterns ?? 0);
 
   const employeePieData = [
@@ -217,13 +218,13 @@ export const Dashboard = () => {
         overflowY: "auto",
       }}
     >
-      {/* ── Header ── */}
-      <Typography
+       <Typography
         style={{
           fontSize: "14px",
           color: textSecondary,
           textTransform: "uppercase",
           letterSpacing: "2px",
+          textAlign: "center",
         }}
       >
         Tableau de bord
@@ -236,6 +237,7 @@ export const Dashboard = () => {
           marginTop: "8px",
           marginBottom: "8px",
           color: textPrimary,
+          textAlign: "center",
         }}
       >
         Vue d'ensemble
@@ -245,6 +247,7 @@ export const Dashboard = () => {
         style={{
           color: textSecondary,
           marginBottom: "40px",
+          textAlign: "center",
         }}
       >
         {new Date().toLocaleDateString("fr-FR", {
@@ -255,9 +258,8 @@ export const Dashboard = () => {
         })}
       </Typography>
 
-      {/* ── Stat Cards ── */}
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6} md={3}>
+       <Grid container spacing={3} justifyContent="center">
+        <Grid item xs={12} sm={6} md={8}>
           {renderCard(
             "TOTAL EMPLOYÉS",
             totalEmployees,
@@ -266,7 +268,7 @@ export const Dashboard = () => {
             "/employees"
           )}
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={6} md={8}>
           {renderCard(
             "EMPLOYÉS ACTIFS",
             activeEmployees,
@@ -275,7 +277,7 @@ export const Dashboard = () => {
             '/employees?filter={"active":true}'
           )}
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={6} md={8}>
           {renderCard(
             "TOTAL STAGIAIRES",
             totalInterns,
@@ -284,7 +286,7 @@ export const Dashboard = () => {
             "/interns"
           )}
         </Grid>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid item xs={12} sm={6} md={8}>
           {renderCard(
             "STAGIAIRES RÉMUNÉRÉS",
             paidInterns,
@@ -295,8 +297,7 @@ export const Dashboard = () => {
         </Grid>
       </Grid>
 
-      {/* ── Section title ── */}
-      <Typography
+       <Typography
         style={{
           fontSize: "13px",
           color: textSecondary,
@@ -304,6 +305,7 @@ export const Dashboard = () => {
           letterSpacing: "2px",
           marginTop: "52px",
           marginBottom: "20px",
+          textAlign: "center",
         }}
       >
         Résumé graphique
@@ -314,13 +316,12 @@ export const Dashboard = () => {
           <CircularProgress />
         </div>
       ) : (
-        <Grid container spacing={3} style={{ marginBottom: "40px" }}>
+        <Grid container spacing={3} justifyContent="center" style={{ marginBottom: "40px" , width: "100%"   }}>
 
-          {/* Bar chart – Comparaison globale */}
-          <Grid item xs={12} md={6}>
+           <Grid item xs={12} md={12}>
             <div style={chartCardStyle}>
               {sectionTitle("Comparaison globale")}
-              <ResponsiveContainer width="100%" height={220}>
+              <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={barData} barCategoryGap="35%">
                   <CartesianGrid
                     strokeDasharray="4 4"
@@ -350,18 +351,17 @@ export const Dashboard = () => {
             </div>
           </Grid>
 
-          {/* Pie – Employés */}
-          <Grid item xs={12} sm={6} md={3}>
+           <Grid item xs={12} sm={6} md={6}>
             <div style={chartCardStyle}>
               {sectionTitle("Répartition employés")}
-              <ResponsiveContainer width="100%" height={220}>
+              <ResponsiveContainer width="100%" height={300}>
                 <PieChart>
                   <Pie
                     data={employeePieData}
                     cx="50%"
                     cy="45%"
-                    innerRadius={55}
-                    outerRadius={85}
+                    innerRadius={70}
+                    outerRadius={105}
                     paddingAngle={3}
                     dataKey="value"
                     strokeWidth={0}
@@ -379,18 +379,17 @@ export const Dashboard = () => {
             </div>
           </Grid>
 
-          {/* Pie – Stagiaires */}
-          <Grid item xs={12} sm={6} md={3}>
+           <Grid item xs={12} sm={6} md={6}>
             <div style={chartCardStyle}>
               {sectionTitle("Répartition stagiaires")}
-              <ResponsiveContainer width="100%" height={220}>
+              <ResponsiveContainer width="100%" height={300}>
                 <PieChart>
                   <Pie
                     data={internPieData}
                     cx="50%"
                     cy="45%"
-                    innerRadius={55}
-                    outerRadius={85}
+                    innerRadius={70}
+                    outerRadius={105}
                     paddingAngle={3}
                     dataKey="value"
                     strokeWidth={0}

@@ -23,7 +23,7 @@ export default function App() {
   const theme = createTheme({
     ...defaultTheme,
     palette: {
-      mode, // ⭐ IMPORTANT : active light/dark réel
+      mode,  
 
       primary: { main: "#6366F1" },
       secondary: { main: "#14B8A6" },
@@ -53,8 +53,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      {/* 🔘 TON BOUTON LIGHT/DARK */}
-      <div
+       <div
         style={{
           position: "fixed",
           top: 10,

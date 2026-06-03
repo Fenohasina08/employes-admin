@@ -43,8 +43,7 @@ export const EmployeeList = () => {
         <TextField source="email" label="Email" />
         <TextField source="department" label="Département" />
 
-        {/* Le salaire proprement formaté en EUR */}
-        <NumberField
+         <NumberField
           source="salary"
           label="Salaire"
           options={{
