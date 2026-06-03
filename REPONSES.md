@@ -107,3 +107,20 @@ Le hook utilisé est useWatch de la bibliothèque react-hook-form. On l'utilise 
 -Sans enabled : Le hook s'exécute dès le premier affichage du composant. Si les données du stagiaire ne sont pas encore arrivées, l'ID vaut undefined. L'application va alors tenter d'appeler une URL invalide (comme /employees/undefined), ce qui déclenche une erreur 404 inutile dans la console réseau .
 
 -Avec enabled  : On lui passe une condition booléenne (ex: enabled: !!intern?.employeeId). Le hook attend sagement que l'identifiant soit disponible et valide avant de déclencher la requête HTTP, ce qui sécurise notre application.
+
+# Exercice 9 — Enrichissement EmployeeShow
+
+### 9.1 : Différence entre useGetList et ReferenceManyField ? Dans quel cas useGetList est-il indispensable ?
+ReferenceManyField  : C'est un composant d'interface (UI) "tout-en-un". Il est conçu pour afficher une relation un-à-plusieurs directement dans une page (par exemple, afficher une liste de stagiaires sous forme de tableau <Datagrid> dans la fiche d'un employé). Il gère lui-même l'appel réseau et la structure visuelle.
+
+useGetList  : C'est un hook de données pur. Il se contente de déclencher la requête HTTP et de te retourner les données brutes (un tableau JavaScript), sans aucune mise en forme.
+
+Quand est-il indispensable ? useGetList devient obligatoire dès que tu as besoin de manipuler, filtrer manuellement ou calculer des données avant de les afficher. C'est le cas si tu veux faire des statistiques, des sommes de salaires, dessiner un graphique (Chart.js), ou créer un affichage sur mesure qui sort des sentiers battus de React-Admin.
+### 9.2 Comment optimiser la requête de DepartmentStats pour ne récupérer que le total sans charger tous les employés ?
+Pour avoir le total sans ralentir l'application, on triche avec la pagination en demandant un seul employé par page (perPage: 1).
+
+Comment ça marche ? Au lieu de demander au serveur de nous donner les fiches de 500 employés d'un coup (ce qui est très lourd et lent), on lui demande de nous envoyer la fiche d'un seul employé.
+
+Pourquoi on a quand même le bon chiffre ? Le serveur est bien fait : même s'il ne nous envoie qu'une seule fiche, il calcule toujours le nombre total de résultats en arrière-plan. React-Admin récupère automatiquement ce chiffre dans la variable total.
+
+Le résultat : Le chargement est instantané parce que le réseau ne télécharge presque rien, mais notre compteur affiche quand même le vrai nombre global !
